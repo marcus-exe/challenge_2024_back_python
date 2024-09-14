@@ -11,11 +11,11 @@ Install `requirements.txt` dependencies:
 ```
 pip install -r requirements.txt
 ```
-Create a config.py inside google_module dir and paste:
+Create a config.py in the root of this project and paste:
 ```
 API_KEY = 'your_api_key_here'
 ```
-
+_remember to use your Google Gemini API Key_
 
 ### Run the project
 Then you can run using:

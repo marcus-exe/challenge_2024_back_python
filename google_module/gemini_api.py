@@ -1,9 +1,9 @@
 import os
 import google.generativeai as genai
-import config
+import config 
 
 # lembre de colocar essa API key em algum canto não visível ao gitignore
-genai.configure(api_key=os.environ[config.API_KEY])
+genai.configure(api_key=config.API_KEY)
 
 # Create the model
 generation_config = {
@@ -26,6 +26,3 @@ chat_session = model.start_chat(
   ]
 )
 
-response = chat_session.send_message("INSERT_INPUT_HERE")
-
-print(response.text)
