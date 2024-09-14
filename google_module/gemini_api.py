@@ -33,6 +33,3 @@
 # response = chat_session.send_message("INSERT_INPUT_HERE")
 
 # print(response.text)
-
-def hello_from_gemini() -> str :
-    return "Hello from Gemini"
