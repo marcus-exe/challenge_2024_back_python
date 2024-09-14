@@ -16,7 +16,7 @@ def submit():
         data = request.get_json()
         json_message = data.get('message')
         google_response = gemini_api.chat_session.send_message(json_message)
-        return f"google response: {google_response}"
+        return f"google response: {google_response.text}"
     else:
         return jsonify({"error": "Request must be JSON"}), 400 
 
