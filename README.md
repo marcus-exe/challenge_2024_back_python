@@ -16,6 +16,7 @@ Create a config.py inside google_module dir and paste:
 API_KEY = 'your_api_key_here'
 ```
 
+
 ### Run the project
 Then you can run using:
 _on windows:_
