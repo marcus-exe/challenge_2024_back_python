@@ -1,2 +1,3 @@
 venv/
 google_module/__pycache__/
+google_module/config.py

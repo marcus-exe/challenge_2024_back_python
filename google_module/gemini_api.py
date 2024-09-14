@@ -1,35 +1,31 @@
-# """
-# Install the Google AI Python SDK
+import os
+import google.generativeai as genai
+import config
 
-# $ pip install google-generativeai
-# """
+# lembre de colocar essa API key em algum canto não visível ao gitignore
+genai.configure(api_key=os.environ[config.API_KEY])
 
-# import os
-# import google.generativeai as genai
+# Create the model
+generation_config = {
+  "temperature": 1,
+  "top_p": 0.95,
+  "top_k": 64,
+  "max_output_tokens": 8192,
+  "response_mime_type": "text/plain",
+}
 
-# genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+model = genai.GenerativeModel(
+  model_name="gemini-1.5-flash",
+  generation_config=generation_config,
+  # safety_settings = Adjust safety settings
+  # See https://ai.google.dev/gemini-api/docs/safety-settings
+)
 
-# # Create the model
-# generation_config = {
-#   "temperature": 1,
-#   "top_p": 0.95,
-#   "top_k": 64,
-#   "max_output_tokens": 8192,
-#   "response_mime_type": "text/plain",
-# }
+chat_session = model.start_chat(
+  history=[
+  ]
+)
 
-# model = genai.GenerativeModel(
-#   model_name="gemini-1.5-flash",
-#   generation_config=generation_config,
-#   # safety_settings = Adjust safety settings
-#   # See https://ai.google.dev/gemini-api/docs/safety-settings
-# )
+response = chat_session.send_message("INSERT_INPUT_HERE")
 
-# chat_session = model.start_chat(
-#   history=[
-#   ]
-# )
-
-# response = chat_session.send_message("INSERT_INPUT_HERE")
-
-# print(response.text)
+print(response.text)

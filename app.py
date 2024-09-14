@@ -14,6 +14,9 @@ def home():
 def submit():
     data = request.json  # Access POST data
     # Here we use gemini stuff
+    
+
+
     return f"Received data: {data}"
 
 if __name__ == '__main__':
