@@ -16,6 +16,7 @@ Create a config.py in the root of this project and paste:
 API_KEY = 'your_api_key_here'
 ```
 _remember to use your Google Gemini API Key_
+_link for generating the key: https://aistudio.google.com/app/prompts/new_chat?pli=1_
 
 ### Run the project
 Then you can run using:
